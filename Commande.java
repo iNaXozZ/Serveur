@@ -5,6 +5,7 @@ public abstract class Commande {
 	protected PrintStream ps;
 	protected String commandeNom = "";
 	protected String [] commandeArgs ;
+	public static String repertoireCourant = "C:/Users/Documents/";
 	
 	public Commande(PrintStream ps, String commandeStr) {
 		this.ps = ps ;

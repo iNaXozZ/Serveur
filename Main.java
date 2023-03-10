@@ -14,15 +14,15 @@ public class Main {
 	public static void main(String[] args) throws Exception {
 		System.out.println("Le Serveur FTP");
 		
-		ServerSocket serveurFTP = new ServerSocket(2121);
-		Socket socket = serveurFTP.accept();
-		
+		ServerSocket serveurFTP = new ServerSocket(2124);
+		Socket socket = serveurFTP.accept();	
 		BufferedReader br = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 		PrintStream ps = new PrintStream(socket.getOutputStream());
 		
 		ps.println("1 Bienvenue ! ");
 		ps.println("1 Serveur FTP Personnel.");
 		ps.println("0 Authentification : ");
+
 		
 		String commande = "";
 		
