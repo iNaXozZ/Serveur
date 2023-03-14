@@ -11,11 +11,12 @@ public class CommandeCD extends Commande {
 	public void execute() {
 		File fichier = new File(repertoireCourant);
 		System.out.println(commandeArgs[0]);
+		
 		if(commandeArgs[0].toLowerCase().equals("..")) {
 			String cheminAbsolu = fichier.getAbsolutePath();
 			String cheminBase = cheminAbsolu.substring(0,cheminAbsolu.lastIndexOf(File.separator));
-			System.out.println("chemin absolu : " + cheminAbsolu);
-			System.out.println("Chemin initial : " + cheminBase );	
+			ps.println("chemin absolu : " + cheminAbsolu);
+			ps.println("Chemin initial : " + cheminBase );	
 		}
 		else if(fichier.isDirectory() == true) {
 			String chemin = repertoireCourant + commandeArgs[0] +"/";
@@ -23,7 +24,7 @@ public class CommandeCD extends Commande {
 			ps.println("chemin : " + chemin);
 		}
 		else {
-			ps.println("Le répertoire que vous voulez accèder présent. Merci d'utiliser un fichier valide.");
+			ps.println("Le répertoire que vous voulez accèder n'est pas présent. Merci d'utiliser un fichier valide.");
 		}
 	}
 

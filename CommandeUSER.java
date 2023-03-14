@@ -11,7 +11,6 @@ public class CommandeUSER extends Commande {
 		if(commandeArgs[0].toLowerCase().equals("personne")) {
 			CommandExecutor.userOk = true;
 			ps.println("0 Commande user OK");
-			System.out.println("0 Commande user OK");
 		}
 		else {
 			ps.println("2 Le user " + commandeArgs[0] + " n'existe pas");
