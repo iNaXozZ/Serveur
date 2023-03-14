@@ -19,8 +19,9 @@ public class CommandeCD extends Commande {
 			ps.println("Chemin initial : " + cheminBase );	
 		}
 		else if(fichier.isDirectory() == true) {
-			String chemin = repertoireCourant + commandeArgs[0] +"/";
+			String chemin = repertoireCourant + commandeArgs[0] +"\\";
 			System.out.println("Nouveau chemin : " + chemin);
+			repertoireCourant = chemin;
 			ps.println("chemin : " + chemin);
 		}
 		else {
