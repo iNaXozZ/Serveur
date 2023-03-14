@@ -15,7 +15,7 @@ public class CommandeLS extends Commande {
 
 	public void execute() {
 		
-		File file= new File(".");
+		File file= new File(repertoireCourant);
 		File[] liste=file.listFiles();
 		
 		
@@ -30,7 +30,7 @@ public class CommandeLS extends Commande {
 	        else if(item.isDirectory())
 	        {
 	        	
-	          System.out.format("Nom du répertoir: %s%n", item.getName()); 
+	          System.out.format("Nom du répertoire: %s%n", item.getName()); 
 	        }
 			}
 		}

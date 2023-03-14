@@ -9,8 +9,7 @@ public class CommandeCD extends Commande {
 
 	//test push 
 	public void execute() {
-		File fichier = new File(repertoireCourant);
-		System.out.println(commandeArgs[0]);
+		File fichier = new File(repertoireCourant +"\\"+commandeArgs[0]);
 		
 		if(commandeArgs[0].toLowerCase().equals("..")) {
 			String cheminAbsolu = fichier.getAbsolutePath();
@@ -20,7 +19,6 @@ public class CommandeCD extends Commande {
 		}
 		else if(fichier.isDirectory() == true) {
 			String chemin = repertoireCourant + commandeArgs[0] +"\\";
-			System.out.println("Nouveau chemin : " + chemin);
 			repertoireCourant = chemin;
 			ps.println("chemin : " + chemin);
 		}
