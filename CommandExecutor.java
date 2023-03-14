@@ -22,11 +22,11 @@ public class CommandExecutor {
 			// Envoyer (uploader) un fichier
 			if(commande.split(" ")[0].equals("stor")) (new CommandeSTOR(ps, commande)).execute();
 			
-			// Envoyer (uploader) un fichier
-			if(commande.split(" ")[0].equals("mkdir")) (new CommandeSTOR(ps, commande)).execute();
+			// Créer un dossier 
+			if(commande.split(" ")[0].equals("mkdir")) (new CommandeMKDIR(ps, commande)).execute();
 			
-			// Envoyer (uploader) un fichier
-			if(commande.split(" ")[0].equals("rmdir")) (new CommandeSTOR(ps, commande)).execute();
+			// Supprimer un dossier
+			if(commande.split(" ")[0].equals("rmdir")) (new CommandeRMDIR(ps, commande)).execute();
 			
 							}
 		else {
