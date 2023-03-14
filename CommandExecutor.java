@@ -21,6 +21,13 @@ public class CommandExecutor {
 			
 			// Envoyer (uploader) un fichier
 			if(commande.split(" ")[0].equals("stor")) (new CommandeSTOR(ps, commande)).execute();
+			
+			// Envoyer (uploader) un fichier
+			if(commande.split(" ")[0].equals("mkdir")) (new CommandeSTOR(ps, commande)).execute();
+			
+			// Envoyer (uploader) un fichier
+			if(commande.split(" ")[0].equals("rmdir")) (new CommandeSTOR(ps, commande)).execute();
+			
 							}
 		else {
 			if(commande.split(" ")[0].equals("pass") || commande.split(" ")[0].equals("user")) {
