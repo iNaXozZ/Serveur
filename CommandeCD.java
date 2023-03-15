@@ -10,21 +10,30 @@ public class CommandeCD extends Commande {
 	//test push 
 	public void execute() {
 		File fichier = new File(repertoireCourant +"\\"+commandeArgs[0]);
+		//File fichier1 = new File(repertoireCourant);
 		
-		if(commandeArgs[0].toLowerCase().equals("..")) {
-			String cheminAbsolu = fichier.getAbsolutePath();
-			String cheminBase = cheminAbsolu.substring(0,cheminAbsolu.lastIndexOf(File.separator));
-			ps.println("chemin absolu : " + cheminAbsolu);
-			ps.println("Chemin initial : " + cheminBase );	
+		try {
+			if(commandeArgs[0].toLowerCase().equals("..")) {
+				String cheminAbsolu = repertoireCourant;
+				String mot = "";
+				String cheminBase = cheminAbsolu.substring(0,cheminAbsolu.lastIndexOf(File.separator));
+				repertoireCourant = cheminBase;
+				ps.println("chemin absolu : " + cheminAbsolu);
+				ps.println("Chemin initial : " + cheminBase );	
+			}
+			else if(fichier.isDirectory() == true) {
+				String chemin = repertoireCourant + commandeArgs[0] +"\\";
+				repertoireCourant = chemin;
+				ps.println("0 commande cd OK");
+				ps.println("0 chemin : " + chemin);
+			}
+			else {
+				ps.println("2 Le répertoire que vous voulez accèder n'est pas présent. Merci d'utiliser un fichier valide.");
+			}
+		} catch (Exception e) {
+			ps.println("Problème lors de l'éxécution de la commande CD");
 		}
-		else if(fichier.isDirectory() == true) {
-			String chemin = repertoireCourant + commandeArgs[0] +"\\";
-			repertoireCourant = chemin;
-			ps.println("chemin : " + chemin);
-		}
-		else {
-			ps.println("Le répertoire que vous voulez accèder n'est pas présent. Merci d'utiliser un fichier valide.");
-		}
+		
 	}
 
 }

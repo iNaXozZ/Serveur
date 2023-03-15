@@ -1,4 +1,3 @@
-import java.awt.image.RescaleOp;
 import java.io.File;
 import java.io.PrintStream;
 
@@ -11,16 +10,21 @@ public class CommandeMKDIR extends Commande {
 	public void execute() {
 		
 		File dossier = new File(repertoireCourant+"\\"+commandeArgs[0]);
+		try {
+			boolean res = dossier.mkdir();
+		      if(res)
+		        { 
+		    	  ps.println("0 commande mkir OK");
+		        } 
+		        else 
+		        {
+		        	ps.println("2 Le dossier "+ commandeArgs[0] + " existe déjà");
+		        } 
+			
+		} catch (Exception e) {
+			ps.println("Problème lors de l'éxécution de la commande MKDIR");
+		}
 		
-		boolean res = dossier.mkdir();
-	      if(res)
-	        { 
-	          ps.println("Le dossier a bien été crée"); 
-	        } 
-	        else 
-	        {
-	          ps.println("Le dossier n'a pas pu être crée");
-	        } 
 	}
 
 }
