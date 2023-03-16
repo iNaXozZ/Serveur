@@ -6,6 +6,7 @@ import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.PrintStream;
 import java.net.Socket;
+import java.nio.file.FileAlreadyExistsException;
 
 public class CommandeGET extends Commande {
 	
@@ -55,7 +56,8 @@ public class CommandeGET extends Commande {
             bis.close();
             fos.close();
 
-			} catch (FileNotFoundException te) {
+			} 
+			 catch (FileNotFoundException te) {
 				ps.println("2 impossible de trouver le fichier "+te);
 			} catch (Exception e) {
 				ps.println("2 Problème lors de l'éxécution de la commande GET "+e);

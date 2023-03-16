@@ -25,17 +25,19 @@ public class CommandeLS extends Commande {
 			        if(item.isFile())
 			        { 
 			        	
-			          System.out.format("Nom du fichier: %s%n", item.getName()); 
+			          ps.println("Nom du fichier: " + item.getName()); 
 			        } 
 			        else if(item.isDirectory())
 			        {
 			        	
-			          System.out.format("Nom du répertoire: %s%n", item.getName()); 
+			          ps.println("Nom du répertoire: "+  item.getName()); 
 			        }
 				}
 			}
+			ps.println("0 Commande LS OK");
 			
-		} catch (Exception e) {
+		} 
+		catch (Exception e) {
 			ps.println("Problème lors de l'éxécution de la commande LS");
 		}
 		

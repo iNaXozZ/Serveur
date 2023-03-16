@@ -6,6 +6,8 @@ public abstract class Commande {
 	protected String commandeNom = "";
 	protected String [] commandeArgs ;
 	public static String repertoireCourant = "C:\\Users\\";
+	public static String [] chaineRemplace= new String [10];
+	public static int i = 0;
 	
 	public Commande(PrintStream ps, String commandeStr) {
 		this.ps = ps ;
